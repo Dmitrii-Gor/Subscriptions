@@ -1,0 +1,61 @@
+### GET
+GET http://localhost:8080/api/v1/health
+Content-Type: application/json
+
+### POST
+POST http://localhost:8080/api/v1/create-sub
+Content-Type: application/json
+
+{
+  "service_name": "Zebra",
+  "price": 499,
+  "user_id": "550e8400-e29b-41d4-a716-446655440000",
+  "start_date": "2025-09-29T00:00:00Z",
+  "end_date": "2025-12-29T00:00:00Z"
+}
+
+### POST
+
+POST http://localhost:8080/api/v1/create-sub
+Content-Type: application/json
+
+{
+  "service_name": "Netflix",
+  "price": 499,
+  "user_id": "550e8400-e29b-41d4-a716-446655440000",
+  "start_date": "2025-09-29T00:00:00Z"
+}
+
+### Delete
+
+DELETE http://localhost:8080/api/v1/delete-sub
+Content-Type: application/json
+
+{
+  "service_name": "Netflix",
+  "price": 499,
+  "user_id": "550e8400-e29b-41d4-a716-446655440000",
+  "start_date": "2025-09-29T00:00:00Z"
+}
+
+### Read
+
+GET http://localhost:8080/api/v1/get-sub/f26039da-2523-4693-bc3b-d466733366e2
+Content-Type: application/json
+
+### Update
+
+PUT http://localhost:8080/api/v1/update-sub/f26039da-2523-4693-bc3b-d466733366e2
+Content-Type: application/json
+
+{
+  "service_name": "Yandex",
+  "price": 10,
+  "user_id": "550e8400-e29b-41d4-a716-446655440000",
+  "start_date": "2025-09-29T00:00:00Z"
+}
+
+### Read list
+
+GET http://localhost:8080/api/v1/get-sub-list
+Content-Type: application/json
