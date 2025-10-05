@@ -5,12 +5,13 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/jackc/pgx/v5/pgxpool"
 	"test/internal/api/handlers"
+	"test/internal/api/middleware"
 	"test/internal/storage"
 )
 
 func InitGinRouter(pool *pgxpool.Pool) (*gin.Engine, error) {
 	r := gin.New()
-	r.Use(gin.Logger(), gin.Recovery())
+	r.Use(middleware.GinLogger(), middleware.GinRecovery())
 	if err := r.SetTrustedProxies(nil); err != nil {
 		return nil, fmt.Errorf("set trusted proxies: %v", err)
 	}
