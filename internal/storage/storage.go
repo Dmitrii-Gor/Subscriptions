@@ -5,15 +5,15 @@ import (
 	"fmt"
 	"github.com/jackc/pgx/v5/pgxpool"
 	"os"
-	"test/internal/Models"
+	"test/internal/models"
 )
 
 type SubscriptionRepository interface {
 	HealthCheck(ctx context.Context) error
-	Create(ctx context.Context, sub *Models.Subscription) (string, error)
-	GetByID(ctx context.Context, id string) (*Models.Subscription, error)
+	Create(ctx context.Context, sub *models.Subscription) (string, error)
+	GetByID(ctx context.Context, id string) (*models.Subscription, error)
 	Delete(ctx context.Context, userID, serviceName string) error
-	List(ctx context.Context, userID string) ([]Models.Subscription, error)
+	List(ctx context.Context, userID string) ([]models.Subscription, error)
 }
 
 type SubscriptionStorage struct {

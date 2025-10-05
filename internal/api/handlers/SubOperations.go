@@ -17,7 +17,7 @@ func (h *SubscriptionHandler) HealthCheck(c *gin.Context) {
 }
 
 func (h *SubscriptionHandler) CreateSubscription(c *gin.Context) {
-	var sub Models.Subscription
+	var sub models.Subscription
 	if err := c.ShouldBindJSON(&sub); err != nil {
 		logger.Error("CreateSubscription: bind JSON failed: " + err.Error())
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
