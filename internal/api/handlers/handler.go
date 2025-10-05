@@ -1,11 +1,13 @@
 package handlers
 
-import "github.com/jackc/pgx/v5/pgxpool"
+import (
+	"test/internal/storage"
+)
 
-type DbHandler struct {
-	DB *pgxpool.Pool
+type SubscriptionHandler struct {
+	repo storage.SubscriptionRepository
 }
 
-func NewHandler(db *pgxpool.Pool) *DbHandler {
-	return &DbHandler{DB: db}
+func NewSubscriptionHandler(repo storage.SubscriptionRepository) *SubscriptionHandler {
+	return &SubscriptionHandler{repo: repo}
 }
